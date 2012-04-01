@@ -4,7 +4,7 @@ var apiKey = "APIKEY";
 //On document ready get the movie data from the Rotten Tomatoes API.
 jQuery(document).ready(function () {
     jQuery.ajax({
-        url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=" + apiKey + "&q=" + scrapeMovieDataAndFormatMovieTitle() + "&page_limit=1",
+        url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=" + apiKey + "&q=" + scrapeMovieDataAndFormatMovieTitle() + "&page_limit=10",
         data: "json",
         type: "get"
     }).always(function (d) {
@@ -21,12 +21,20 @@ function parseRottenData(d) {
             if (m) {
                 var r = m.ratings;
                 jQuery(".ratingsInfo")
-                    .append("<a href='" + m.links.alternate + "'><div title='" + r.critics_rating + "' class='starbar starbar-avg stbrWrapStc clearfix'><p class='label'> Tomatometer: </p><span class='rating'> " + r.critics_score + "% </span></div><div title='" + r.audience_rating + "' class='starbar starbar-avg stbrWrapStc clearfix'><p class='label'> Audience: </p><span class='rating'> " + r.audience_score + "% </span></div></a>");
+                    .append("<a href='" + m.links.alternate + "'><div title='" + r.critics_rating + "' class='starbar starbar-avg stbrWrapStc clearfix'><p class='label'> Tomatometer: </p><span class='rating'> " + formatScore(r.critics_score) + "</span></div><div title='" + r.audience_rating + "' class='starbar starbar-avg stbrWrapStc clearfix'><p class='label'> Audience: </p><span class='rating'> " + formatScore(r.audience_score) + "</span></div></a>");
             }
-        }
-        
+        }        
     } else {
         console.error(d.status, d.statusText);
+    }
+}
+
+//Handle a case where they do not have a score yet. 
+function formatScore(score) {
+    if (score > -1) {        
+        return score + "%";
+    } else {
+        return "n/a";
     }
 }
 
@@ -37,6 +45,7 @@ function scrapeMovieDataAndFormatMovieTitle() {
 }
 
 function getMovie(movies) {
+    console.log(movies.length);
     if (movies.length > 1) {
         //find movie with same year
         for (var i = 0; i < movies.length; i++) {

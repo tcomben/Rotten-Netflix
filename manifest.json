@@ -4,7 +4,7 @@
   "description": "Appends Rotten Tomatoes scores to Netflix movie pages.",
   "content_scripts": [
     {
-      "matches": ["http://movies.netflix.com/Movie/*"],
+      "matches": ["http://movies.netflix.com/*Movie/*"],
       "js": ["js/jquery-1.7.1.min.js", "js/rottenNetflix.js"]
     }
   ],
