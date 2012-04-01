@@ -1,0 +1,22 @@
+{
+  "name": "Rotten Tomatoes Score on Netflix",
+  "version": "1.0",
+  "description": "Appends Rotten Tomatoes scores on Netflix page.",
+  "content_scripts": [
+    {
+      "matches": ["http://movies.netflix.com/Movie/*"],
+      "js": ["js/jquery-1.7.1.min.js", "js/rottenNetflix.js"]
+    }
+  ],
+  "permissions" : [
+    "http://api.rottentomatoes.com/"
+  ],
+  "icons" : {
+    "16": "images/icon16.png",
+    "19": "images/icon19.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png",
+    "130": "images/icon130.png",
+    "550": "images/icon550.png"
+  }
+}
