@@ -1,7 +1,7 @@
 {
-  "name": "Rotten Tomatoes Score on Netflix",
+  "name": "Rotten Netflix",
   "version": "1.0",
-  "description": "Appends Rotten Tomatoes scores on Netflix page.",
+  "description": "Appends Rotten Tomatoes scores to Netflix movie pages.",
   "content_scripts": [
     {
       "matches": ["http://movies.netflix.com/Movie/*"],

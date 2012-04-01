@@ -1,9 +1,10 @@
 var movieData = null;
+var apiKey = "APIKEY";
 
 //On document ready get the movie data from the Rotten Tomatoes API.
 jQuery(document).ready(function () {
     jQuery.ajax({
-        url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=APIKEY&q=" + scrapeMovieDataAndFormatMovieTitle() + "&page_limit=1",
+        url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=" + apiKey + "&q=" + scrapeMovieDataAndFormatMovieTitle() + "&page_limit=1",
         data: "json",
         type: "get"
     }).always(function (d) {

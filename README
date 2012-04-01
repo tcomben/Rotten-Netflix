@@ -1,0 +1,55 @@
+Rotten Netflix
+================================
+A Chrome extension that appends Rotten Tomatoes scores to Netflix movie pages
+
+
+Overview
+--------------------------
+This was intended to help people searching for movies on Netflix, and are interested in the Rotten Tomatoes score.
+
+
+Features
+--------------------------
+
+* Appends the Rotten Tomato critic and audience score to Netflix movie pages
+* Score is a link to the movie's Rotten Tomato page
+
+
+Installation (for Users)
+--------------------------
+
+Just visit the Chrome app store and install. 
+
+
+Installation (for Developers)
+-------------------------
+
+Visit https://github.com/tcomben/Rotten-Netflix to get the latest
+
+Sign up for a Rotten Tomatoes api key. Visit http://developer.rottentomatoes.com/docs/read/Home for all the info you'll need.
+Copy and paste your api key into the variable "apiKey" in rottenNetflix.js.
+
+Open Chrome
+(Windows)
+Click the wrench icon and click Tools -> Extensions
+Click the "Developer Mode" checkbox
+Click "Load unpacked extension"
+Navigate to source folder and click "OK"
+Enjoy!
+
+About
+-------------------------
+Copyright (C) 2012  Tim Comben
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
